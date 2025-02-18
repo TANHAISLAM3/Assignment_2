@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+        }
+
+        main {
+            text-align: center;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        #counter_value {
+            font-size: 3rem;
+            color: #007bff;
+            display: block;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn.decrease {
+            background-color: #ff6b6b;
+            color: white;
+        }
+
+        .btn.reset {
+            background-color: #f1c40f;
+            color: white;
+        }
+
+        .btn.increase {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .btn:active {
+            transform: translateY(1px);
+        }
+    </style>
+</head>
+<body>
+<main>
+    <div class="counter_container">
+        <h1>
+            Counter
+        </h1>
+        <span id="counter_value"> 0 </span>
+        <div class="button-container">
+            <button class="btn decrease">Decrease</button>
+            <button class="btn reset">Reset</button>
+            <button class="btn increase">Increase</button>
+        </div>
+    </div>
+</main>
+<script>
+    // counter //
+let count = 0;
+// select value and buttons
+const value = document.querySelector('#counter_value');
+const btns = document.querySelectorAll(".btn");
+
+btns.forEach(function(btn){
+    btn.addEventListener("click", function(e){
+        const styles = e.currentTarget.classList;
+        if (styles.contains("decrease")){
+            count--;
+        }
+        else if (styles.contains('increase')){
+            count++;
+        }
+        else {
+            count = 0;
+        }
+        value.textContent = count;
+    });
+});
+
+</script> 
+</body>
+</html>

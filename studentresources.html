@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student resources</title>
+  <link rel="stylesheet" type="text/css" href="homepage.css">
+  <link rel="stylesheet" type="text/css" href="media.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script></head>
+
+<style>
+    html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            background: rgb(9,11,9);
+            background: radial-gradient(circle, rgba(9,11,9,1) 0%, rgba(108,54,114,1) 50%, rgba(38,36,119,1) 69%, rgba(36,80,111,1) 83%, rgba(0,0,0,1) 90%);
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0px 0px;
+            position: relative;
+            width: 100%;
+            z-index: 1;
+            margin-top: auto;
+        }
+
+        main {
+            flex: 1;
+        }
+  #myinput {
+    margin-top: 20px !important;
+    margin-bottom: 35px;
+}
+main {
+    flex: 1;
+}
+  </style>
+<body class="student-resources-page">
+    <nav>
+        <div class="headername">Tanha Islam</div>
+        <div class="burger">&#9776;</div>
+        <div class="top-navbarlinks">
+            <ul>
+            <li><a href="homepage.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="studentresources.html">Resources</a></li>
+            <li><a href="Users/signup.html">Sign up</a></li>
+            <li><button id="dark-mode-toggle"><i class="fas fa-moon"></i></button></li>
+            </ul>
+        </div>
+    </nav>
+<main>
+    <h1  class="sr" style="text-align: center; font-size: 4em; color: #3ce6ef; margin-top: 100px; margin-bottom: 5px; 
+    text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #ffffff;">Student Resources</h1>
+
+    <div style="padding-top: 30px;">
+        <input type="text" class="form-control mt-3 mx-auto" id="myinput" placeholder="Search for resources..." style="width:30%;" />
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="grid-item" onclick="window.location.href='https://www.youtube.com/watch?v=Zz59q8wHECk&t=21s';">
+                    <img src="assets/book_abdaal.jpg" alt="person holding a chart">
+                    <div class="content">
+                        <h2>5 Mindset Shifts</h2>
+                        <p>Discipline is the key to succes.</p>
+                        <p>But the key to displine is hard to define.</p>
+                        <p>Ali abdall explores steps with scientific explanation</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="grid-item" onclick="window.location.href='https://open.spotify.com/playlist/0OXQdqs1sUs6Gli6bkrYeg';">
+                    <img src="assets/lofi_listening.jpg" alt="girl with headphones">
+                    <div class="content">
+                        <h2>My study playlist</h2>
+                        <p>Study playlist that is specifically selected</p>
+                        <p>for specific reasons such as providing both</p>
+                        <p>comfort and motivation for students while</p>
+                        <p>academic pressure is overflowing.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="grid-item" onclick="window.location.href=https://www.reddit.com/r/learnprogramming/wiki/faq/#wiki_how_can_i_get.2Fstay_motivated_to_learn_programming.3F;">
+                    <img src="assets/coding.jpg" alt="Google Logo">
+                    <div class="content">
+                        <h2>Questions and Answers</h2>
+                        <p>A subreddit for all questions related to programming in any language.</p>
+                        <p>Especially helpful to those who are new and starting out programming.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="grid-item" onclick="window.location.href='https://www.simplilearn.com/tutorials/programming-tutorial/best-coding-books-you-must-read';">
+                <img src="assets/programming_books.jpg" alt="">
+                <div class="content">
+                    <h2>5 best programming books that you must read!</h2>
+                    <p>Discipline is the key to succes.</p>
+                    <p>But the key to displine is hard to define.</p>
+                    <p>Ali abdall explores steps with scientific explanation</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="grid-item" onclick="window.location.href='counter.html';">
+                <img src="assets/yoga_counter.jpg" alt="girl with headphones">
+                <div class="content">
+                    <h2>Count your breath!</h2>
+                    <p>Take deep breaths with the</p>
+                    <p>use of the counter made especially by Tanha.</p>
+                    <p>To help people breathe better and</p>
+                    <p>lead a happier life.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="grid-item" onclick="window.location.href='todo.html';">
+                <img src="assets/Todolist.jpg" alt="">
+                <div class="content">
+                    <h2>Track your day!</h2>
+                    <p>P.s - You can do it</p>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="grid-item" onclick="window.location.href='https://www.youtube.com/watch?v=Zz59q8wHECk&t=21s';">
+                <img src="assets/self_improvement.jpg" alt="person holding a chart">
+                <div class="content">
+                    <h2>Self-improvement</h2>
+                    <p>Take a break and grap a cup of tea because</p>
+                    <p>we've curated the best just for you. Relax and enjoy.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="grid-item" onclick="window.location.href='https://codecombat.com/';">
+                <img src="assets/code_combat.jpg" alt="girl with headphones">
+                <div class="content">
+                    <h2>Code Combat</h2>
+                    <p>A coding based learning platform. Where anyone can learn coding without the need to use youtube or attending any university.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="grid-item" onclick="window.location.href='https://www.youtube.com/watch?v=lkIFF4maKMU'">
+                <img src="assets/javascript.png" alt="Google Logo">
+                <div class="content">
+                    <h2>Javascript concepts</h2>
+                    <p>Important javascript concepts to better understand how javascript works.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="grid-item" onclick="window.location.href='https://www.bbc.co.uk/news/technology';">
+                <img src="assets/technology_trends.jpg" alt="person holding a chart">
+                <div class="content">
+                    <h2>Latest Technology Trends</h2>
+                    <p>If you want current updates about lates technologies, don't forget to bookmark the page!</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="grid-item" onclick="window.location.href='https://www.w3schools.com/python/';">
+                <img src="assets/python_ref.jpeg" alt="">
+                <div class="content">
+                    <h2>Best website to learn python</h2>
+                    <p>I have been using this website to learn python as well as other programming languages.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="grid-item" onclick="window.location.href='https://www.glassdoor.co.uk/index.htm';">
+                <img src="assets/jobsearch.jpeg" alt="Google Logo">
+                <div class="content">
+                    <h2>Questions and Answers</h2>
+                    <p>A subreddit for all questions related to programming in any language.</p>
+                    <p>Especially helpful to those who are new and starting out programming.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Search functionality
+document.getElementById("myinput").addEventListener("keyup", function() {
+    let filterText = this.value.toLowerCase();
+    let cards = document.querySelectorAll(".grid-item");
+
+    cards.forEach(function(card) {
+        let title = card.querySelector("h2").textContent.toLowerCase();
+        let content = card.querySelector(".content").textContent.toLowerCase();
+        if (title.includes(filterText) || content.includes(filterText)) {
+            card.parentElement.style.display = "flex";
+        } else {
+            card.parentElement.style.display = "none";
+        }
+    });
+});
+</script>
+</main>
+<script src="full.js"></script>
+<footer>
+    <p>&copy; 2024 Tanha Islam. All rights reserved.</p>
+</footer>
+</body>
+</html>

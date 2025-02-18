@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lets connect!</title>
+    <link rel="stylesheet" type="text/css" href="./homepage.css"> 
+    <link rel="stylesheet" type="text/css" href="./media.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <style>
+      body {
+      padding: 0;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #000000;
+    }
+
+
+    </style>
+</head>
+<body>
+  <nav class="aboutnav">
+        <div class="about-navbar">
+        <div class="burger">&#9776;</div>
+        <div class="headername">Tanha Islam</div>
+          <div class="top-navbarlinks">
+              <ul>
+              <li><a href="homepage.html">Home</a></li>
+              <li><a href="#about">Connect</a></li>
+              <li><a href="studentresources.html">Resources</a></li>
+              <li><a href="Users/signup.html">Sign up</a></li>
+              </ul>
+          </div>
+      </div>
+    </nav>
+  <canvas id="canvas"></canvas>
+    <div class="particle">
+      <button type="button" class="contact-button" onclick="window.location.href='https://www.linkedin.com/in/tanha-islam-8255002a2/';">LinkedIn</button>
+      <button type="button" class="gmail-button" onclick="window.location.href='mailto:tanha.sarani@outlook.com';">Email</button>
+        <button type="button" class="insta-button" onclick="window.location.href='https://www.instagram.com/tanha.sarani/';">Insta</button>
+    </div>
+    <script>
+        var w, h, loopId, id, canvas, ctx, particles;
+
+var options = {
+  particleColor: "rgba(255,255,255)",
+  lineColor: "rgba(0,181,255)",
+  particleAmount: 30,
+  defaultRadius: 2,
+  variantRadius: 3,
+  defaultSpeed: 1,
+  variantSpeed: 1,
+  linkRadius: 300
+};
+
+var rgb = options.lineColor.match(/\d+/g);
+
+document.addEventListener("DOMContentLoaded", init);
+
+function init() {
+  canvas = document.getElementById("canvas");
+  ctx = canvas.getContext("2d");
+  resizeReset();
+  initialiseElements();
+  startAnimation();
+}
+
+function resizeReset() {
+  w = canvas.width = window.innerHeight;
+  h = canvas.height = window.innerHeight;
+}
+
+function initialiseElements() {
+  particles = [];
+  for (var i = 0; i < options.particleAmount; i++) {
+    particles.push(new Particle());
+  }
+}
+
+function startAnimation() {
+  loopId = requestAnimationFrame(animationLoop);
+}
+
+function animationLoop() {
+  ctx.clearRect(0,0,w,h);
+  drawScene();
+
+  id = requestAnimationFrame(animationLoop);
+}
+
+function drawScene() {
+  drawLine();
+  drawParticle();
+}
+
+function drawParticle() {
+  for (var i = 0; i < particles.length; i++) {
+    particles[i].update();
+    particles[i].draw();
+  }
+}
+
+function drawLine() {
+  for (var i = 0; i < particles.length; i++) {
+    linkPoints(particles[i], particles);
+  }
+}
+
+function linkPoints(point, hubs) {
+  for (var i = 0; i < hubs.length; i++) {
+    var distance = checkDistance(point.x, point.y, hubs[i].x, hubs[i].y);
+    var opacity = 1 - distance / options.linkRadius;
+    if (opacity > 0) {
+      ctx.lineWidth = 0.5;
+      ctx.strokeStyle = 'rgba('+rgb[0]+','+rgb[1]+','+rgb[2]+','+opacity+')';
+      ctx.beginPath();
+      ctx.moveTo(point.x, point.y);
+      ctx.lineTo(hubs[i].x, hubs[i].y);
+      ctx.closePath();
+      ctx.stroke();
+    }
+  }
+}
+
+function checkDistance(x1, y1, x2, y2) {
+  return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+}
+
+Particle = function() {
+  var _this = this;
+
+  _this.x = Math.random() * w;
+  _this.y = Math.random() * h;
+  _this.color = options.particleColor;
+  _this.radius = options.defaultRadius + Math.random() * options.variantRadius;
+  _this.speed = options.defaultSpeed + Math.random() * options.variantSpeed;
+  _this.directionAngle = Math.floor(Math.random() * 360);
+  _this.vector = {
+    x: Math.cos(_this.directionAngle) * _this.speed,
+    y: Math.sin(_this.directionAngle) * _this.speed
+  }
+
+  _this.update = function() {
+    _this.border();
+    _this.x += _this.vector.x;
+    _this.y += _this.vector.y;
+  }
+
+  _this.border = function() {
+    if (_this.x >= w || _this.x <= 0) {
+      _this.vector.x *= -1;
+    }
+    if (_this.y >= h || _this.y <= 0) {
+      _this.vector.y *= -1;
+    }
+    if (_this.x > w) _this.x = w;
+    if (_this.y > h) _this.y = h;
+    if (_this.x < 0) _this.x = 0;
+    if (_this.y < 0) _this.y = 0;
+  }
+
+  _this.draw = function() {
+    ctx.beginPath();
+    ctx.arc(_this.x, _this.y, _this.radius, 0, Math.PI * 2);
+    ctx.closePath();
+    ctx.fillStyle = _this.color;
+    ctx.fill();
+  }
+}
+    </script>
+    <script src="full.js">
+  </script>
+</body>
+</html>

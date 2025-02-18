@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../homepage.css"> 
+  <title>Sign up to my newsletter!</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+    background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364); /* Dark gradient resembling a galaxy */
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Make the background fixed while scrolling */
+    color: rgb(0, 0, 0); /* Set text color to white for better readability */
+    font-family: Arial, sans-serif;
+  }
+    .form-box {
+      background: rgb(109, 17, 88);
+      background-size: cover;
+      border: 2px solid #ae599d;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .was-validated .form-control:valid, .form-control.is-valid {
+      border-color: #28a745;
+      padding-right: calc(1.5em + .75rem);
+      background-image: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8' fill='%2328a745'%3e%3cpath d='M6.564 1.564a.5.5 0 1 1 .707.707L3.707 5.836a.5.5 0 0 1-.707 0L1.5 4.336a.5.5 0 1 1 .707-.707L3.5 4.921l2.864-2.857z'/%3e%3c/svg%3e);
+      background-repeat: no-repeat;
+      background-position: center right calc(.375em + .1875rem);
+      background-size: calc(.75em + .375rem) calc(.75em + .375rem);
+    }
+
+    .was-validated .form-control:invalid, .form-control.is-invalid {
+      border-color: #dc3545;
+      padding-right: calc(1.5em + .75rem);
+      background-repeat: no-repeat;
+      background-position: center right calc(.375em + .1875rem);
+    }
+  </style>
+</head>
+<body>
+    <div class="homepage" href>
+          <button id="homeButton">Go to Homepage</button>
+    </div>
+    <div class="container">
+      <div class="form-box my-4">
+        <h2 class="my-4">Sent</h2>
+        <form id="validationForm" class="needs-validation" novalidate>
+          <div class="form-row">
+            <div class="col-md-6 mb-3">
+              <label for="firstName">First name</label>
+              <input type="text" class="form-control" id="firstName" required>
+              <div class="invalid-feedback">Please provide a first name.</div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="lastName">Last name</label>
+              <input type="text" class="form-control" id="lastName" required>
+              <div class="invalid-feedback">Please provide a last name.</div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-6 mb-3">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" id="email" required>
+              <div class="invalid-feedback">Please provide a valid email.</div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" id="password" required>
+              <div class="valid-feedback">Looks good!</div>
+              <div class="invalid-feedback">Password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.</div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="date">Date</label>
+              <input type="date" class="form-control" id="date" required>
+              <div class="invalid-feedback">Please provide a valid date</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="feedback">Feedback / Questions</label>
+            <textarea class="form-control" id="feedback" rows="4" placeholder="Enter your feedback or questions here" required></textarea>
+            <div class="invalid-feedback">Please provide your feedback or questions.</div>
+          </div>
+          <button class="btn btn-primary" type="submit">Submit form</button>
+        </form>
+      </div>
+    </div>
+    <script src="index.js">
+    </script>
+</body>
